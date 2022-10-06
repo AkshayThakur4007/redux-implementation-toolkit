@@ -1,9 +1,9 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
 // defining actions
-const increment = createAction("increment/counter");
-const decrement = createAction("decrement/counter");
-const incrementByAmount = createAction("incrementByAmount/counter");
+export const increment = createAction("increment/counter");
+export const decrement = createAction("decrement/counter");
+export const incrementByAmount = createAction("incrementByAmount/counter");
 
 // defining initial state
 const initialState = {
@@ -15,12 +15,12 @@ const initialState = {
 export const CounterSlice = createReducer(initialState, (builder) => {
   // builder takes action as parameter
   builder.addCase(increment, (state, action) => {
-    return state.value++;
+     state.value++;
   });
   builder.addCase(decrement, (state, action) => {
-    return state.value--;
+     state.value--;
   });
   builder.addCase(incrementByAmount, (state, action) => {
-    return (state.value = action.payload);
+    (state.value += action.payload);
   });
 });
