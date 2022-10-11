@@ -5,18 +5,20 @@ import {
   increment,
   incrementByAmount,
 } from "./Redux/Store/Slices/CounterSlice";
+import Posts from "./components/Posts/Posts";
 
 function App() {
-  const value = useSelector((state) => state?.counter.value);
-  const dispatch = useDispatch();
+  // const value = useSelector((state) => state?.counter.value);
+  // const dispatch = useDispatch();
   return (
     <div className="App">
-      <h1>Counter :{value}</h1>
+      {/* <h1>Counter :{value}</h1>
       <button onClick={() => dispatch(increment())}>+</button>
       <button onClick={() => dispatch(decrement())}>-</button>
       <button onClick={() => dispatch(incrementByAmount(20))}>
         Increment by Amount
-      </button>
+      </button> */}
+      <Posts />
     </div>
   );
 }
